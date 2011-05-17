@@ -14,13 +14,21 @@ module NewRelic #:nodoc:
   end
 end
 
-Padrino.after_load do
-  NewRelic::Agent.add_instrumentation(
-    File.join(
-      File.dirname(__FILE__),
-      'padrino-rpm/instrumentation/**/*.rb'
+module PadrinoRpm
+  def self.init!
+    NewRelic::Agent.add_instrumentation(
+      File.join(
+        File.dirname(__FILE__),
+        'padrino-rpm/instrumentation/**/*.rb'
+      )
     )
-  )
+    
+    require "ext/metric_parser"
+  end
+end
+
+Padrino.after_load do
+  PadrinoRpm.init!
 end
 
 Padrino.before_load do
@@ -29,3 +37,4 @@ Padrino.before_load do
     Padrino.use NewRelic::Rack::DeveloperMode
   end
 end
+
