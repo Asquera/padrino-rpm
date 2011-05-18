@@ -1,4 +1,4 @@
-puts "Warning! The padrino-rpm gem should be loaded before the newrelic_rpm gem if you are using Resque or Camping." if defined?(::NewRelic) && defined?(::NewRelic::Control)
+puts "Warning! The padrino-rpm gem should be loaded before the newrelic_rpm gem." if defined?(::NewRelic) && defined?(::NewRelic::Control)
 
 module NewRelic #:nodoc:
   class LocalEnvironment #:nodoc:
