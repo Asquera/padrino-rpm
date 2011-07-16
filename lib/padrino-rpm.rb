@@ -15,6 +15,8 @@ module NewRelic #:nodoc:
 end
 
 module PadrinoRpm
+  VERSION = "0.4.0"
+  
   def self.init!
     NewRelic::Agent.add_instrumentation(
       File.join(
