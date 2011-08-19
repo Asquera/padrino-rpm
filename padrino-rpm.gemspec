@@ -3,11 +3,11 @@
 Gem::Specification.new do |s|
   s.name = %q{padrino-rpm}
   
-  s.version = "0.4.0"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Florian Gilcher"]
-  s.date = %q{2011-05-17}
+  s.date = %q{2011-08-19}
   s.description = %q{A gem for monitoring Padrino with newrelic rpm}
   s.email = %q{florian.gilcher@asquera.de}
 
@@ -16,6 +16,6 @@ Gem::Specification.new do |s|
   s.summary = %q{Padrino Instrumentation for New Relic RPM}
   s.files = `git ls-files`.split("\n")
 
-  s.add_dependency(%q<newrelic_rpm>, ["~> 3.1.0"])
+  s.add_dependency(%q<newrelic_rpm>, "~> 3.1.0")
 end
 
