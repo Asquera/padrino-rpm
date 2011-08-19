@@ -34,6 +34,7 @@ Padrino.after_load do
 end
 
 Padrino.before_load do
+  require 'new_relic/control'
   require 'new_relic/rack/developer_mode'
 
   if Padrino.env == :development
