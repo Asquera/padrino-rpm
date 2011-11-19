@@ -26,6 +26,8 @@ module PadrinoRpm
     )
     
     require "ext/metric_parser"
+    
+    NewRelic::Agent.manual_start()
   end
 end
 
