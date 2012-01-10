@@ -11,6 +11,11 @@ Run `bundle install` and add a newrelic.yml to your project:
 
 If you are running your Padrino application on Heroku's Bamboo stack, running "newrelic install" is not necessary because Heroku adds newrelic.yml on your behalf.
 
+
+## Unicorn
+
+If you are using unicorn, make sure that you read the following: http://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+
 ## Word of warning
 
 At the moment, this works for me. Any additions are welcome.
