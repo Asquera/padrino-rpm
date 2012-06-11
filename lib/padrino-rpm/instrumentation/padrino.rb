@@ -25,7 +25,7 @@ module PadrinoRpm
         end
         
         perform_action_with_newrelic_trace(:category => :controller, :name => short_name, :params => request.params, :class_name => controller)  do
-          route_eval_without_newrelic(*args, &block) # RPM loads the sinatra plugin too eagerly
+          dispatch_with_newrelic(*args, &block) # RPM loads the sinatra plugin too eagerly
         end
       end
 
