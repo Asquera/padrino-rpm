@@ -17,7 +17,7 @@ module PadrinoRpm
     module Padrino
       include NewRelic::Agent::Instrumentation::ControllerInstrumentation
       
-      def route_eval(*args, &block)
+      def dispatch!(*args, &block)
         if @route
           name = @route.as_options[:name]
           short_name = name.to_s.split(/_/).last
