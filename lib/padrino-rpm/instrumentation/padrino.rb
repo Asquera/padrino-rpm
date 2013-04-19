@@ -19,11 +19,13 @@ module PadrinoRpm
 
       def dispatch!(*args, &block)
         found_route = self.class.compiled_router.recognize(request.env)
+        found_route = found_route[0] if found_route[0].is_a?(Array)
+
         if found_route
           params = found_route.first.params
           found_route = found_route.first.path.route
           controller = found_route.controller.to_s
-          short_name = found_route.named.to_s.gsub(/^#{controller}_/, '')
+          short_name = found_route.name.to_s.gsub(/^#{controller}_/, '')
         else
           # Fallback based on path
           parts = request.path.split('/')
