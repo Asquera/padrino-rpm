@@ -16,7 +16,7 @@ end
 
 module PadrinoRpm
   VERSION = "0.4.0"
-  
+
   def self.init!
     NewRelic::Agent.add_instrumentation(
       File.join(
@@ -24,9 +24,9 @@ module PadrinoRpm
         'padrino-rpm/instrumentation/**/*.rb'
       )
     )
-    
+
     require "ext/metric_parser"
-    
+
     NewRelic::Agent.manual_start()
   end
 end
@@ -43,4 +43,3 @@ Padrino.before_load do
     Padrino.use NewRelic::Rack::DeveloperMode
   end
 end
-
